@@ -1,0 +1,13 @@
+{
+    "presets": [
+        [
+            "@babel/env",
+            {
+                "corejs": 3,
+                "useBuiltIns": "usage",
+                "debug": true,
+                "modules": false
+            }
+        ]
+    ]
+}
