@@ -70,7 +70,11 @@ module.exports = {
             filename: 'index.html',
             chunks: ['main'],
             template: './src/views/index.html',
+<<<<<<< HEAD
             favicon: 'src/images/favicon.ico'
+=======
+            favicon: './src/images/favicon.ico'
+>>>>>>> a8c7805825d444d39466d26835b0fe5f1bcb4a11
         })
     ]
 };
