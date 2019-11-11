@@ -16,6 +16,10 @@ module.exports = {
     module: {
         rules: [
             {
+                test: /\.html$/,
+                use: ['html-loader']
+            },
+            {
                 test: /\.js$/,
                 exclude: /node_modules/,
                 use: ['babel-loader']
@@ -30,7 +34,7 @@ module.exports = {
                 use: {
                     loader: 'file-loader',
                     options: {
-                        name: '[name].[ext]',
+                        name: '[contenthash].[ext]',
                         outputPath: 'fonts'
                     }
                 }
@@ -39,10 +43,11 @@ module.exports = {
                 test: /\.(gif|png|jpe?g|svg)$/,
                 use: [
                     {
-                        loader: 'file-loader',
+                        loader: 'url-loader',
                         options: {
+                            limit: 8192,
                             name: '[name].[ext]',
-                            outputPath: 'images'
+                            outputPath: './images'
                         }
                     }
                 ]
