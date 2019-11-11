@@ -17,27 +17,21 @@ module.exports = {
         rules: [
             {
                 test: /\.html$/,
-                use: ['html-loader']
+                use: 'html-loader'
             },
             {
                 test: /\.js$/,
                 exclude: /node_modules/,
-                use: ['babel-loader']
+                use: 'babel-loader'
+            },
+            {
+                test: /\.(eot|otf|ttf|woff|woff2)$/,
+                use: 'file-loader'
             },
             {
                 test: /\.scss$/,
                 exclude: /node_modules/,
                 use: ['style-loader', 'css-loader', 'sass-loader']
-            },
-            {
-                test: /\.(eot|otf|ttf|woff|woff2)$/,
-                use: {
-                    loader: 'file-loader',
-                    options: {
-                        name: '[contenthash].[ext]',
-                        outputPath: 'fonts'
-                    }
-                }
             },
             {
                 test: /\.(gif|png|jpe?g|svg)$/,
