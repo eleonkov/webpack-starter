@@ -21,7 +21,6 @@ module.exports = {
             },
             {
                 test: /\.js$/,
-                exclude: /node_modules/,
                 use: 'babel-loader'
             },
             {
@@ -29,22 +28,13 @@ module.exports = {
                 use: 'file-loader'
             },
             {
+                test: /\.(gif|png|jpe?g|svg)$/,
+                use: 'file-loader'
+            },
+            {
                 test: /\.scss$/,
                 exclude: /node_modules/,
                 use: ['style-loader', 'css-loader', 'sass-loader']
-            },
-            {
-                test: /\.(gif|png|jpe?g|svg)$/,
-                use: [
-                    {
-                        loader: 'url-loader',
-                        options: {
-                            limit: 8192,
-                            name: '[name].[ext]',
-                            outputPath: './images'
-                        }
-                    }
-                ]
             }
         ]
     },
