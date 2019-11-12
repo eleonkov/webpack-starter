@@ -54,7 +54,6 @@ module.exports = {
                 use: {
                     loader: 'file-loader',
                     options: {
-                        name: '[contenthash].[ext]',
                         outputPath: 'fonts'
                     }
                 }
@@ -66,8 +65,7 @@ module.exports = {
                         loader: 'url-loader',
                         options: {
                             limit: 8192,
-                            name: '[name].[ext]',
-                            outputPath: './images'
+                            outputPath: 'images'
                         }
                     },
                     {
